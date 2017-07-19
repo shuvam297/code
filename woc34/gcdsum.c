@@ -24,23 +24,22 @@ int main(void){
 
 		for(int j=0;j<n;j++){
 
-			if(a[i]>b[j])
-				tmp=gcd(a[i],b[j]);
-			else 
-				tmp=gcd(b[j],a[i]);
+			if(a[i]==b[j]){
 
-			if(tmp>gm){
-				gm=tmp;
-				sum = a[i]+b[j];
+				if(gm<a[i]){
+
+					gm = a[i];
+					sum=2*a[i];
+
+				}
+				
+				break;
+
 			}
-			else if(gm==tmp){
-
-				if(sum<a[i]+b[j])
-					sum=a[i]+b[j];
-			}
-
 		}
+
 	}
+	
 
 	printf("%u\n", sum);
 
